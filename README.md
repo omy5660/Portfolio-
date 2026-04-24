@@ -27,7 +27,7 @@ A high-performance, modern portfolio built with **Next.js 14**, **Framer Motion*
 ## 🧑‍💻 Author
 
 **Om Arun Yadav**
-- Email: omy14460@gmail.com
+- Email: omy14416@gmail.com
 - Phone: +91 9373994518
 - GitHub: [omy5660](https://github.com/omy5660)
 
