@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function About() {
   return (
@@ -26,15 +27,35 @@ export default function About() {
           <p className="text-lg text-neutral-500 font-light leading-relaxed">
             With a strong foundation in <span className="text-white font-medium">SQL, Python, and Machine Learning</span>, I focus on turning complex, unstructured datasets into clear, actionable narratives. Whether it's predicting trends, detecting anomalies, or building interactive dashboards, I thrive on solving hard problems with data-driven precision.
           </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+            <div>
+              <p className="text-3xl font-bold text-white">20+</p>
+              <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Analytical Projects</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">9.73</p>
+              <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">MCA CGPA</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">3+</p>
+              <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Years Experience</p>
+            </div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="mt-8"
+            className="mt-12"
           >
-            <a href="#contact" className="text-white font-medium uppercase tracking-widest text-sm border-b border-white/30 pb-1 hover:border-white transition-colors">
-              Get in touch
+            <a href="#contact" className="group flex items-center gap-4 w-fit">
+              <span className="text-white font-medium uppercase tracking-widest text-sm border-b border-white/30 pb-1 group-hover:border-white transition-colors">
+                Get in touch
+              </span>
+              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-blue-500 transition-all duration-300">
+                <FiArrowUpRight className="text-white group-hover:rotate-45 transition-transform" />
+              </div>
             </a>
           </motion.div>
         </motion.div>

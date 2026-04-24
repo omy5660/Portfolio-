@@ -11,11 +11,33 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      // Using your direct email. Formspree will send you a one-time activation email 
+      // after the first submission. 
+      const response = await fetch("https://formspree.io/omy14416@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        form.reset();
+      } else {
+        const data = await response.json();
+        console.error("Form error:", data);
+      }
+    } catch (error) {
+      console.error("Form submission error", error);
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   const containerVariants = {
@@ -117,6 +139,7 @@ export default function Contact() {
                         <label className="text-xs uppercase tracking-widest text-neutral-500 font-bold ml-1">Your Name</label>
                         <input
                           required
+                          name="name"
                           placeholder="John Doe"
                           className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all placeholder:text-neutral-600"
                         />
@@ -126,6 +149,7 @@ export default function Contact() {
                         <input
                           required
                           type="email"
+                          name="email"
                           placeholder="john@example.com"
                           className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-emerald-500/50 focus:bg-white/10 transition-all placeholder:text-neutral-600"
                         />
@@ -135,6 +159,7 @@ export default function Contact() {
                       <label className="text-xs uppercase tracking-widest text-neutral-500 font-bold ml-1">Message</label>
                       <textarea
                         required
+                        name="message"
                         rows={5}
                         placeholder="Tell me about your project..."
                         className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all resize-none placeholder:text-neutral-600"
