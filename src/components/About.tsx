@@ -48,10 +48,10 @@ export default function About() {
           className="relative w-full aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden glass border border-white/10"
         >
           <Image
-            src="/gallery_1_1776877795882.png" // Using one of the gallery placeholders as a cool abstract element for the about section
-            alt="Data Abstract"
+            src="/profile_placeholder_1776877743130.png"
+            alt="Om Arun Yadav"
             fill
-            className="object-cover opacity-80 mix-blend-lighten"
+            className="object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </motion.div>

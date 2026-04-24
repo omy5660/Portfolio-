@@ -68,6 +68,15 @@ const PROJECTS = [
     color: "from-emerald-500/20 to-teal-500/20",
     caseStudy: null
   },
+  {
+    id: 1,
+    title: "Financial Dashboard & Analysis",
+    description: "Built an interactive financial dashboard using Power BI and SQL to track KPIs and provide actionable insights for a retail business.",
+    cover: "/media__1776882555139.jpg",
+    tags: ["Power BI", "SQL", "Excel", "DAX"],
+    color: "from-blue-500/20 to-indigo-500/20",
+    caseStudy: null
+  },
 ];
 
 function ProjectModal({ project, onClose }: { project: any, onClose: () => void }) {
