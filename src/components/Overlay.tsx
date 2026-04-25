@@ -10,8 +10,8 @@ export default function Overlay({ containerRef }: { containerRef: RefObject<HTML
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 300,
+    damping: 40,
     restDelta: 0.001
   });
 
@@ -39,7 +39,7 @@ export default function Overlay({ containerRef }: { containerRef: RefObject<HTML
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           className="text-5xl md:text-8xl font-extrabold tracking-tighter text-white drop-shadow-2xl"
         >
           Om Arun Yadav.
@@ -48,7 +48,7 @@ export default function Overlay({ containerRef }: { containerRef: RefObject<HTML
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="mt-6 text-xl md:text-3xl font-light text-neutral-300 drop-shadow-lg"
         >
           Analytical <span className="text-gradient font-medium">Data Analyst</span>.
@@ -57,7 +57,7 @@ export default function Overlay({ containerRef }: { containerRef: RefObject<HTML
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           className="mt-10 flex gap-4 pointer-events-auto"
         >
           <a
