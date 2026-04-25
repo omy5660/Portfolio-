@@ -18,7 +18,7 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">

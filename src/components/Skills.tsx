@@ -79,19 +79,58 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {SKILL_CATEGORIES.map((category, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              className="glass p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition-colors group"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+                {category.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-6">{category.title}</h3>
+              <div className="space-y-4">
+                {category.skills.map((skill, i) => (
+                  <div key={i} className="space-y-2">
+                    <div className="flex justify-between text-xs uppercase tracking-widest text-neutral-500">
+                      <span>{skill.name}</span>
+                      <span className="text-neutral-400">{skill.level}%</span>
+                    </div>
+                    <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 + (i * 0.1) }}
+                        className="h-full bg-gradient-to-r from-blue-500 to-emerald-400"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="mt-20 flex flex-wrap justify-center gap-4"
+        >
           {["NLP", "Pandas", "NumPy", "Scikit-Learn", "TensorFlow", "Matplotlib", "Seaborn", "MySQL", "PostgreSQL", "Git", "Excel"].map((badge, i) => (
-            <motion.span
+            <span
               key={badge}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05, duration: 0.4 }}
-              className="px-5 py-2 glass rounded-full text-sm text-neutral-300 hover:text-white hover:bg-white/10 transition-all border border-white/5"
+              className="px-5 py-2 glass rounded-full text-sm text-neutral-300 hover:text-white hover:bg-white/10 transition-all border border-white/5 cursor-default"
             >
               {badge}
-            </motion.span>
+            </span>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );

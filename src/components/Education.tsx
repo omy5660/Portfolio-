@@ -45,7 +45,7 @@ function AnimatedScore({ value, type }: { value: string, type: "CGPA" | "percent
   useEffect(() => {
     if (isInView) {
       animate(motionValue, numericValue, {
-        duration: 2,
+        duration: 0.8,
         ease: "easeOut",
       });
     }
@@ -76,14 +76,14 @@ export default function Education() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
   };
 
   return (
@@ -93,7 +93,7 @@ export default function Education() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">

@@ -43,8 +43,8 @@ export default function ScrollyCanvas() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 300,
+    damping: 40,
     restDelta: 0.001
   });
 

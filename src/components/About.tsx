@@ -14,7 +14,7 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex flex-col gap-6"
         >
           <div className="inline-block w-20 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mb-4" />
@@ -46,7 +46,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-12"
           >
             <a href="#contact" className="group flex items-center gap-4 w-fit">
@@ -65,7 +65,7 @@ export default function About() {
           initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative w-full aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden glass border border-white/10"
         >
           <Image

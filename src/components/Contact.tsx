@@ -11,10 +11,10 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    
+
     try {
       // Using your direct email. Formspree will send you a one-time activation email 
       // after the first submission. 
@@ -25,7 +25,7 @@ export default function Contact() {
           'Accept': 'application/json'
         }
       });
-      
+
       if (response.ok) {
         setIsSubmitted(true);
         form.reset();
@@ -45,15 +45,15 @@ export default function Contact() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.05,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
   };
 
   return (
@@ -94,8 +94,8 @@ export default function Contact() {
                 { icon: <FiPhone />, label: "Phone", value: "+91 9373994518", href: "tel:9373994518" },
                 { icon: <FiMapPin />, label: "Location", value: "Remote / Open to Relocation", href: null },
               ].map((item, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   variants={itemVariants}
                   className="flex items-center gap-6 group"
                 >
@@ -122,7 +122,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="relative"
           >
             <div className="glass p-10 rounded-[2.5rem] border border-white/10 relative z-10">
