@@ -130,7 +130,6 @@ export default function Skills() {
             </span>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
